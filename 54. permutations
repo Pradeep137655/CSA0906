@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+class permutation{
+public static String swap(String a,int i,int j)
+{
+char[] b=a.toCharArray();
+char ch;
+ch=b[i];
+b[i]=b[j];
+b[j]=ch;
+return String.valueOf(b);
+}
+public static void permutate(String b,int s,int e)
+{
+if(s==e-1)
+{
+System.out.println(b);
+}
+else
+{
+for(int i=s;i<e;i++)
+{
+b=swap(b,s,i);
+permutate(b,s+1,e);
+b=swap(b,s,i);
+}
+}
+}
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);o
+b
+System.out.println("enter a string=");
+String a=s.nextLine();
+int len=a.length();
+System.out.println("permutations of "+a+" =");
+permutate(a,0,len);
+}
+}
